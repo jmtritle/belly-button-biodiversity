@@ -14,6 +14,7 @@ function unpack(rows, index) {
     });
   };
 
+
 // setting the y axis and labels variables
 var y = Object.values(data.samples);
 var labels = Object.keys(data.otu_ids);
