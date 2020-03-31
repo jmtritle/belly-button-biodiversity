@@ -27,40 +27,6 @@ d3.selectAll("#selDataset").on("change", updatePlotly);
 
     var id = dataset.id;
     var samples = dataset.samples;
-    var labels = dataset.otu_lables;
-
-    // create horizontal bar chart
-    var trace1 = {
-        x: labels,
-        y: samples,
-        type: "bar",
-        text: ''
-        };
-
-    var data = [trace1]
-  
-    // Note the extra brackets around 'x' and 'y'
-    Plotly.restyle("bar", "labels", [labels]);
-    Plotly.restyle("bar", "y", [y]);
-
-    // create bubble chart
-    var trace1 = {
-        x: id,
-        y: ,
-        mode: 'markers'
-        };
-    
-    var data = [trace1]
-
-    var layout = {
-        title: "Marker Size and Color",
-        showlegend: false,
-        height: 600,
-        width: 600
-      };
-      
-    Plotly.restyle("bubble", data, layout);
-
-  }
+    var labels = dataset.otu_labels;
   
   init();
