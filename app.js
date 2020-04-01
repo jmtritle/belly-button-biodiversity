@@ -32,7 +32,7 @@ function updatePlotly(value) {
     var otuData = [];
 
     for (var i = 0; i < samples.length; i++) {
-      if samples[i].id === value) {
+      if (samples[i].id === value) {
         for (var o = 0; o < samples[i].otu_ids.length; o++) {
           otuData.push({
             otu_id: samples[i].otu_ids[o],
