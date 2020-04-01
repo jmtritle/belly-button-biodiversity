@@ -20,12 +20,13 @@ var dropDown = d3.select("#selDataset")
 optionChanged("940");
 
 };
-
-function changeOption(value) {
+// when the option changes, it will trigger the updatePlotly function
+function optionChanged(value) {
   console.log(value);
   updatePlotly(value);
 };
 
+// setting up the function that will update the Plotly charts
 function updatePlotly(value) {
   d3.json("./samples/json").then(function(data) {
     var samples = data.samples;
