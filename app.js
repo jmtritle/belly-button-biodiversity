@@ -9,6 +9,7 @@ function init() {
 const dataPromise = d3.json("./data/samples.json");
 console.log("Data Promise: ", dataPromise);
 
+// setting up the dropdown menu
 var dropDown = d3.select("#selDataset")
   .selectAll("option")
   .data(data.names)
@@ -17,6 +18,7 @@ var dropDown = d3.select("#selDataset")
   .text(d => d);
 });
 
+// setting the default sample option
 optionChanged("940");
 
 };
@@ -31,6 +33,7 @@ function updatePlotly(value) {
   d3.json("./samples/json").then(function(data) {
     var samples = data.samples;
     var otuData = [];
+    
 // rolling a loop through the sample data to check and see if the sample information
 // matches the value and, if so, loads it into otuData
     for (var i = 0; i < samples.length; i++) {
