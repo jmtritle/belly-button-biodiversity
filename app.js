@@ -1,8 +1,9 @@
 // setting up the d3.json to pull the data
 
-d3.json("./data/samples.json").then(function(data) {
+function init() {
+  d3.json("./data/samples.json").then(function(data) {
     console.log(data);
-});
+
 
 // setting up the datapromise and making sure it's pulling correctly
 const dataPromise = d3.json("./data/samples.json");
@@ -14,6 +15,11 @@ var dropDown = d3.select("#selDataset")
   .enter()
   .append("option")
   .text(d => d);
+});
+
+optionChanged("940");
+
+}
 
 function changeOption(value) {
   console.log(value);
