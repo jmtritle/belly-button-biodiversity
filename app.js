@@ -30,7 +30,7 @@ function optionChanged(value) {
 
 // setting up the function that will update the Plotly charts
 function updatePlotly(value) {
-  d3.json("./samples/json").then(function(data) {
+  d3.json("./data/samples/json").then(function(data) {
     var samples = data.samples;
     var otuData = [];
 
