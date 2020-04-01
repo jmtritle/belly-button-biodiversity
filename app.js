@@ -33,7 +33,7 @@ function updatePlotly(value) {
   d3.json("./samples/json").then(function(data) {
     var samples = data.samples;
     var otuData = [];
-    
+
 // rolling a loop through the sample data to check and see if the sample information
 // matches the value and, if so, loads it into otuData
     for (var i = 0; i < samples.length; i++) {
@@ -47,7 +47,7 @@ function updatePlotly(value) {
         };
       };
     };
-  });
+
 
 // getting metadata for the demographic information
   var demoInfo = data.metadata;
@@ -132,7 +132,7 @@ var layout = {
 
 var data = [trace1];
 Plotly.newPlot("bubble-chart", data, layout);
-
+});
 };
 
 init();
