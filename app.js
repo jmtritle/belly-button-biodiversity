@@ -44,6 +44,22 @@ function updatePlotly(value) {
     };
   });
 
+// getting metadata for the demographic information
+  var demoInfo = data.metadata;
+
+// setting up the storage unit for that information
+  var metaInfo = {};
+
+// looping through the metadata to see if it matches the value given previously
+  for (var i = 0; i < demoInfo.length; i++) {
+      if (demoInfo[i].id == value) {
+          metaInfo = demoInfo[i];
+      };
+  };
+
+// if it matches it will pull the appropriate data here
+  d3.select("#sample-metadata")
+  .html(`ID: ${metaInfo.id}<br>Ethnicity: ${metaInfo.ethnicity}<br>Gender: ${metaInfo.gender}<br>Age: ${metaInfo.age}<br>Location: ${metaInfo.location}<br>BBType: ${metaInfo.bbtype}<br>W.Frequency: ${metaInfo.wfreq}`);
 
 // sorting the data appropriately
 var dataSort = otuData;
@@ -113,7 +129,8 @@ var data = [trace1];
 
 Plotly.newPlot("bubble-chart", data, layout);
 
-});
+};
 
 };
+
   init();
