@@ -131,6 +131,5 @@ Plotly.newPlot("bubble-chart", data, layout);
 
 };
 
-};
 
   init();
