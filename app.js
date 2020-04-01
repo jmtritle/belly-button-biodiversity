@@ -30,7 +30,8 @@ function updatePlotly(value) {
   d3.json("./samples/json").then(function(data) {
     var samples = data.samples;
     var otuData = [];
-
+// rolling a loop through the sample data to check and see if the sample information
+// matches the value and, if so, loads it into otuData
     for (var i = 0; i < samples.length; i++) {
       if (samples[i].id === value) {
         for (var o = 0; o < samples[i].otu_ids.length; o++) {
@@ -106,7 +107,7 @@ var size = otuData.map(d => d.sample_values);
 var color = otuData.map(d => d.otu_ids);
 var text = otuData.map(d => d.otu_labels);
 
-// setting trace data
+// setting trace data and doing all the things to make a bubble chart
 
 var trace1 = {
   x: x,
@@ -126,10 +127,8 @@ var layout = {
 };
 
 var data = [trace1];
-
 Plotly.newPlot("bubble-chart", data, layout);
 
 };
 
-
-  init();
+init();
