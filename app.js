@@ -19,12 +19,12 @@ var dropDown = d3.select("#selDataset")
 
 optionChanged("940");
 
-}
+};
 
 function changeOption(value) {
   console.log(value);
   updatePlotly(value);
-}
+};
 
 function updatePlotly(value) {
   d3.json("./samples/json").then(function(data) {
@@ -38,11 +38,11 @@ function updatePlotly(value) {
             otu_id: samples[i].otu_ids[o],
             sample_value: samples[i].sample_values[o],
             otu_label: samples[i].otu_labels[o]
-          })
-        }
-      }
-    }
-  })
+          });
+        };
+      };
+    };
+  });
 
 
 // sorting the data appropriately
