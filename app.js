@@ -68,7 +68,7 @@ function updatePlotly(value) {
 
 // sorting the data appropriately
 var dataSort = otuData;
-dataSort.sort((firstValue, secondValue) => secondValue.sample_values - firstValue.sample_values);
+dataSort.sort((firstValue, secondValue) => secondValue.sample_value - firstValue.sample_value);
 
 // taking the sorted info and slicing it up, then reversing the order
 var dataslice = dataSort.slice(0, 10).reverse();
@@ -77,9 +77,9 @@ var dataslice = dataSort.slice(0, 10).reverse();
 // x is the sample_values from the dataset
 // y is the otu_ids from the dataset
 // hoverLabel is the otu_labels from the dataset
-var x = dataslice.map(d => d.sample_values);
-var y = dataslice.map(d => `OTU ${d.otu_ids}`);
-var hoverLabel = dataslice.map(d => d.otu_labels);
+var x = dataslice.map(d => d.sample_value);
+var y = dataslice.map(d => `OTU ${d.otu_id}`);
+var hoverLabel = dataslice.map(d => d.otu_label);
 
 // setting up the trace information so it pulls the right info
 // and makes it a horizontal bar chart
@@ -105,11 +105,11 @@ Plotly.newPlot("bar-chart", data, layout);
 // bubble chart is a go!
 // all the trace variables, oh boy
 
-var x = otuData.map(d => d.otu_ids);
-var y = otuData.map(d => d.sample_values);
-var size = otuData.map(d => d.sample_values);
-var color = otuData.map(d => d.otu_ids);
-var text = otuData.map(d => d.otu_labels);
+var x = otuData.map(d => d.otu_id);
+var y = otuData.map(d => d.sample_value);
+var size = otuData.map(d => d.sample_value);
+var color = otuData.map(d => d.otu_id);
+var text = otuData.map(d => d.otu_label);
 
 // setting trace data and doing all the things to make a bubble chart
 
